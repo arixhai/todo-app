@@ -1,0 +1,90 @@
+body {
+    
+    background-color: rgb(245, 245, 245);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 50px;
+    color: rgba(175, 47, 47, 0.15);
+}
+
+.input {
+    color: rgb(77, 77, 77);
+    font-size: 24px;
+    width: inherit;
+    font-family: Arial;
+    font-style: italic;
+    border: none;
+    box-shadow: -3px 3px 17px rgba(0, 0, 0, 0.1);
+    padding: 16px 16px 16px 40px;
+    
+}
+
+ul {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    
+}
+
+ul li {
+    position: relative;
+    background-color: white;
+    list-style: none;
+    padding: 17px 15px;
+    width: 526px;
+    height: 35px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 300;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+}
+
+label {
+    font-size: 24px;
+    font-family: Arial;
+
+}
+
+button {
+    margin-right: 20px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background-color: white;
+}
+
+button.clicked {
+    background-color: rgb(2, 209, 2);
+    font-size: 24px;
+
+}
+
+label.clicked {
+    text-decoration: line-through;
+    color: grey;
+}
+
+span {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    right: 10px;
+    cursor: pointer;
+    color: darkred;
+}
+
+
