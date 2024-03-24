@@ -6,7 +6,6 @@ toDoList.forEach(element => {
     drawToDo(element);
 });
 
-
 inputBox.addEventListener('keydown' , (event) => {
     if (event.key === 'Enter') {
         toDoList.push(inputBox.value);
@@ -55,6 +54,7 @@ function drawToDo(value) {
         console.log("span clicked")
         li.remove();
         // toDo -- remove element from localStorage
+        // hello
     });
     }
 }
