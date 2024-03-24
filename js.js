@@ -14,7 +14,7 @@ inputBox.addEventListener('keydown' , (event) => {
         inputBox.value = "";
     }
 });
-
+.
 
 function drawToDo(value) {
 
