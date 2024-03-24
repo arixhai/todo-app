@@ -1,25 +1,33 @@
 const inputBox = document.getElementById('input');
 const listContainer = document.getElementById('listContainer');
+const toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
+
+toDoList.forEach(element => {
+    drawToDo(element);
+});
 
 
-inputBox.addEventListener('keydown' , function(event) {
+inputBox.addEventListener('keydown' , (event) => {
     if (event.key === 'Enter') {
-        tasks();
+        toDoList.push(inputBox.value);
+        localStorage.setItem('toDoList',JSON.stringify(toDoList));
+        drawToDo(inputBox.value);
+        inputBox.value = "";
     }
 });
 
 
-function tasks() {
+function drawToDo(value) {
 
     
-    if (inputBox.value === '') {
+    if (value === '') {
     
     } else {
 
         let li = document.createElement("li");
-        console.log(inputBox.value)
+        console.log(value)
         let listContent = document.createElement("label");
-        listContent.innerHTML = inputBox.value;
+        listContent.innerHTML = value;
 
         let button = document.createElement("button");
         let span = document.createElement("span");
@@ -29,9 +37,7 @@ function tasks() {
         li.appendChild(button);
         li.appendChild(listContent);
         li.appendChild(span);
-        
-        
-        inputBox.value = '';
+
 
     listContent.addEventListener('click', function (li) { 
         console.log("label clicked")
@@ -48,7 +54,7 @@ function tasks() {
     span.addEventListener('click',  function() {
         console.log("span clicked")
         li.remove();
+        // toDo -- remove element from localStorage
     });
-     
     }
 }
