@@ -26,16 +26,16 @@ function drawToDo(value) {
         console.log(value)
         let listContent = document.createElement("label");
         listContent.innerHTML = value;
-
+        
         let button = document.createElement("button");
         let span = document.createElement("span");
         span.innerHTML = "X";
-        
+
         listContainer.appendChild(li);
         li.appendChild(button);
         li.appendChild(listContent);
         li.appendChild(span);
-
+        
 
     listContent.addEventListener('click', function (li) { 
         console.log("label clicked")
@@ -49,11 +49,18 @@ function drawToDo(value) {
         listContent.classList.toggle("clicked");
     }); 
 
-    span.addEventListener('click',  function() {
+    span.addEventListener('click',  function(event) {
         console.log("span clicked")
-        li.remove();
-        // toDo -- remove element from localStorage
-        // hello
+        event.stopPropagation();
+
+       // toDo -- remove element from localStorage
+        const index = Array.from(listContainer.children).indexOf(li);
+
+        toDoList.splice(index, 1);
+
+        localStorage.setItem('toDoList', JSON.stringify(toDoList));
+
+        listContainer.removeChild(li);
     });
     }
 }
