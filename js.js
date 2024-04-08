@@ -1,6 +1,7 @@
 const inputBox = document.getElementById('input');
 const listContainer = document.getElementById('listContainer');
 const toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
+const compDestination = [];
 
 toDoList.forEach(element => {
     drawToDo(element);
@@ -41,6 +42,11 @@ function drawToDo(value) {
         console.log("label clicked")
         li.target.classList.toggle("clicked");
         button.classList.toggle("clicked");
+        const completedIndex = Array.from(listContainer.children).indexOf(li);
+
+        compDestination.push(toDoList[completedIndex]);
+        localStorage.setItem('compDestination', JSON.stringify(compDestination));
+
     }); 
 
     button.addEventListener('click', function(button) {
